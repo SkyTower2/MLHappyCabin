@@ -73,7 +73,7 @@ public final class RegexUtils {
      * @return {@code true}: yes<br>{@code false}: no
      */
     public static boolean isFromAnyOfEmailProviders(String email, String[] emailProviders) {
-        return com.blankj.utilcode.util.ArrayUtils.contains(emailProviders, extractEmailProvider(email));
+        return ArrayUtils.contains(emailProviders, extractEmailProvider(email));
     }
 
 

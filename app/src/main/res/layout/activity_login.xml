@@ -2,6 +2,19 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:binding="http://schemas.android.com/apk/res-auto">
 
+    <!--  使用的是 Data Binding 来更新 UI，这属于 数据绑定（Data Binding）方式 来自动更新 UI
+    Data Binding 更新 UI 的特点：
+    1、自动更新 UI：通过在 XML 中使用 @={} 绑定表达式，当 ViewModel 中的属性发生变化时，UI 会自动更新，无需手动调用 setText() 或 setImageResource() 等方法。
+    2、双向绑定：如 EditText 的 android:text="@={viewModel.userName}" 实现了双向绑定。用户输入的变化会自动同步到 viewModel.userName，反之，viewModel.userName 变化时，EditText 也会自动显示最新数据。
+    3、事件绑定：通过 binding:onClickCommand 这样的自定义属性，事件（如点击、焦点变化等）会绑定到 ViewModel 中的命令（通常使用 BindingAdapter 来定义这些自定义属性）。当用户交互发生时，会自动调用 ViewModel 中的方法。
+
+    这种方式的优点：
+    代码简洁：减少了在 Activity 或 Fragment 中手动更新 UI 的代码，逻辑分离更清晰。
+    性能优化：Data Binding 提供了比传统的 findViewById() 更高效的方式来绑定数据到视图。
+    更易维护：UI 和业务逻辑分离清晰，尤其在使用 MVVM 架构时。
+
+    推荐与 ViewModel 和 LiveData 一起使用，可以显著简化代码和提升 UI 的响应性能
+      -->
     <data>
 
         <variable
@@ -152,9 +165,9 @@
             </LinearLayout>
 
             <TextView
-                android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:text="模拟一个登陆操作,随便输入账号密码点击登录即可进入"
                 android:textColor="#EE1010" />
         </LinearLayout>
