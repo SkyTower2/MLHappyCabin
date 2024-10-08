@@ -199,7 +199,7 @@ public final class PermissionUtils {
      * @param permissions The permissions.
      * @return the single {@link PermissionUtils} instance
      */
-    public static PermissionUtils permissionGroup(@PermissionGroup final String... permissions) {
+    public static PermissionUtils permissionGroup(@PermissionConstants.PermissionGroup final String... permissions) {
         return permission(permissions);
     }
 
