@@ -1,0 +1,24 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="me.ml.mvvmhabit">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <application>
+        <activity
+            android:name="me.ml.mvvmhabit.base.ContainerActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false" />
+        <activity
+            android:name="me.ml.mvvmhabit.crash.DefaultErrorActivity"
+            android:exported="false"
+            android:process=":error_activity" />
+
+        <provider
+            android:name="me.ml.mvvmhabit.crash.CaocInitProvider"
+            android:authorities="${applicationId}.customactivityoncrashinitprovider"
+            android:exported="false"
+            android:initOrder="101"
+            />
+    </application>
+
+</manifest>
